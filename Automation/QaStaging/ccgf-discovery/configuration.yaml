@@ -1,0 +1,43 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-discovery-service:2.1.0.76.1
+  routes:
+  - comparison: exact
+    path: /discovery
+    rewriteUri: /ccgf-discovery
+  - comparison: prefix
+    path: /discovery/
+    rewriteUri: /ccgf-discovery/
+  - comparison: prefix
+    path: /discovery?
+    rewriteUri: /ccgf-discovery?
+  - comparison: exact
+    path: /api/discovery
+    rewriteUri: /ccgf-discovery
+  - comparison: prefix
+    path: /api/discovery/
+    rewriteUri: /ccgf-discovery/
+  - comparison: prefix
+    path: /api/discovery?
+    rewriteUri: /ccgf-discovery?
+  - comparison: exact
+    path: /api/ccgf-discovery
+    rewriteUri: /ccgf-discovery
+  - comparison: prefix
+    path: /api/ccgf-discovery/
+    rewriteUri: /ccgf-discovery/
+  - comparison: prefix
+    path: /api/ccgf-discovery?
+    rewriteUri: /ccgf-discovery?
+  - comparison: exact
+    path: /ccgf-discovery
+  - comparison: prefix
+    path: /ccgf-discovery/
+  - comparison: prefix
+    path: /ccgf-discovery?
+helmVersion: 0.2.68

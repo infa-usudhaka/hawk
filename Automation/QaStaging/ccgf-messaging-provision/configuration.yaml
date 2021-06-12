@@ -1,0 +1,7 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-messaging-provision-service:2.0.1.43.1
+helmVersion: 0.2.69

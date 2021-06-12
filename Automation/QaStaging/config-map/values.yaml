@@ -1,0 +1,12 @@
+
+# override lb url
+internalDns: https://qastaging-app.hawk.rel.infaqa.com
+externalDns: https://qastaging-mgmt.hawk.rel.infaqa.com
+configmap:
+  extraConstant:
+    - key: vaultpath
+      value: 7KyeAbMadxnS
+    - key: username
+      value: myuser
+    - key: password
+      value: 7KyeAbMadxnS

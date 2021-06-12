@@ -1,0 +1,12 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  hpa:
+    maxreplicas: 8
+    minreplicas: 2
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-database-provision-service:1.0.0.79.1
+helmVersion: 0.2.76

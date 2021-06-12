@@ -1,0 +1,3 @@
+opsgenieTeam: ccgf_qastagting_team
+arnrole: arn:aws:iam::530774763960:role/InfaQACCGFAppRole
+namespace: intcloud-qastaging-ccgf

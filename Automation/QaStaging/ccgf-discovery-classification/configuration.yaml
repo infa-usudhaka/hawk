@@ -1,0 +1,9 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-discovery-classification-job:1.15.0.109.1
+helmVersion: 0.2.39

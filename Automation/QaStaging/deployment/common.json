@@ -1,0 +1,878 @@
+{
+    "monitoring": {
+        "thanos": "https://thanos-trickster.nlb.eks.qa.cloudtrust.rocks"
+    }, 
+    "landscape": {
+        "resetRouting": "true", 
+        "displayname": "QaStaging", 
+        "help": "dev", 
+        "terraform": {
+            "profile": "ccgf", 
+            "version": "0.12.24"
+        }, 
+        "iics": {
+            "discale": {
+                "internal": "https://ias-qa-rel-pod1-int-elb.infacloudops.net", 
+                "external": "https://ias-pod1.rel.infaqa.com"
+            }, 
+            "url": "qa-ma.rel.infaqa.com", 
+            "certgen": {
+                "serviceaccount": "tms"
+            }, 
+            "saas": {
+                "internal": "https://intcloud-rel-pod1-internalelb.infacloudops.net/saas", 
+                "external": "https://qa-pod1.rel.infaqa.com/saas"
+            }, 
+            "podurl": "qa-pod1.rel.infaqa.com", 
+            "cai": {
+                "internal": "https://cai-qa-release-pod1-r33-intelb.infacloudops.net", 
+                "external": "https://pod1-cai.rel.infaqa.com"
+            }, 
+            "podname": "pod1", 
+            "vault": {
+                "url": "https://vault-uswest2.iicsqa.cloudtrust.rocks", 
+                "role": "r33rel-pod1"
+            }, 
+            "pods": [
+                {
+                    "url": "https://qa-pod1.rel.infaqa.com", 
+                    "services": {
+                        "cloudUI": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/cloudUI", 
+                            "external": "https://qa-pod1.rel.infaqa.com/cloudUI"
+                        }, 
+                        "cloudShell": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/cloudshell", 
+                            "external": "https://qa-pod1.rel.infaqa.com/cloudshell"
+                        }, 
+                        "certificateAuthority": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/ca-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/ca-service"
+                        }, 
+                        "branding": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/branding-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/branding-service"
+                        }, 
+                        "session": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/session-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/session-service"
+                        }, 
+                        "migration": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/migration", 
+                            "external": "https://qa-pod1.rel.infaqa.com/migration"
+                        }, 
+                        "jobLog": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/jls-di", 
+                            "external": "https://qa-pod1.rel.infaqa.com/jls-di"
+                        }, 
+                        "admin": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/admin-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/admin-service"
+                        }, 
+                        "discale": {
+                            "externalPrivateUrl": "https://ias-qa-rel-pod1-int-elb.infacloudops.net", 
+                            "external": "https://ias-pod1.rel.infaqa.com"
+                        }, 
+                        "notification": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/notification-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/notification-service"
+                        }, 
+                        "saas": {
+                            "externalPrivateUrl": "https://intcloud-rel-pod1-internalelb.infacloudops.net/saas", 
+                            "external": "https://qa-pod1.rel.infaqa.com/saas"
+                        }, 
+                        "auditlog": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/auditlog-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/auditlog-service"
+                        }, 
+                        "frs": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/frs", 
+                            "external": "https://qa-pod1.rel.infaqa.com/frs"
+                        }, 
+                        "vcs": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/vcs", 
+                            "external": "https://qa-pod1.rel.infaqa.com/vcs"
+                        }, 
+                        "kms": {
+                            "externalPrivateUrl": "https://intcloud-rel-pod1-internalelb.infacloudops.net/kms-service", 
+                            "external": "https://intcloud-rel-pod1-internalelb.infacloudops.net/kms-service"
+                        }, 
+                        "bundle": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/bundle-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/bundle-service"
+                        }, 
+                        "preference": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/preference-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/preference-service"
+                        }, 
+                        "scheduler": {
+                             "urls": {
+                                "internal": "https://intcloud-rel-pod1-internalelb.infacloudops.net/scheduler-service",
+                                "external": "https://qa-pod1.rel.infaqa.com/scheduler-service"
+                            }
+                        }, 
+                        "discoveryIQ": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/idiq-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/idiq-service"
+                        }, 
+                        "license": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/license-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/license-service"
+                        }, 
+                        "content_repository": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/content-repo", 
+                            "external": "https://qa-pod1.rel.infaqa.com/content-repo"
+                        }, 
+                        "callback": {
+                            "externalPrivateUrl": "https://qa-pod1.rel.infaqa.com/callback-service", 
+                            "external": "https://qa-pod1.rel.infaqa.com/callback-service"
+                        }, 
+                        "cai": {
+                            "externalPrivateUrl": "https://cai-qa-release-pod1-r33-intelb.infacloudops.net", 
+                            "external": "https://pod1-cai.rel.infaqa.com"
+                        }
+                    }, 
+                    "internalurl": "https://intcloud-rel-pod1-internalelb.infacloudops.net", 
+                    "id": "1vxsEGsu6ojcaFmJBwN5Qx", 
+                    "name": "pod1"
+                }, 
+                {
+                    "url": "https://qa-pod2.rel.infaqa.com", 
+                    "services": {
+                        "cloudUI": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/cloudUI", 
+                            "external": "https://qa-pod2.rel.infaqa.com/cloudUI"
+                        }, 
+                        "cloudShell": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/cloudshell", 
+                            "external": "https://qa-pod2.rel.infaqa.com/cloudshell"
+                        }, 
+                        "certificateAuthority": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/ca-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/ca-service"
+                        }, 
+                        "branding": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/branding-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/branding-service"
+                        }, 
+                        "session": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/session-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/session-service"
+                        }, 
+                        "migration": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/migration", 
+                            "external": "https://qa-pod2.rel.infaqa.com/migration"
+                        }, 
+                        "jobLog": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/jls-di", 
+                            "external": "https://qa-pod2.rel.infaqa.com/jls-di"
+                        }, 
+                        "admin": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/admin-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/admin-service"
+                        }, 
+                        "discale": {
+                            "externalPrivateUrl": "https://ias-qa-rel-pod2-int-elb.infacloudops.net", 
+                            "external": "https://ias-pod2.rel.infaqa.com"
+                        }, 
+                        "notification": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/notification-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/notification-service"
+                        }, 
+                        "saas": {
+                            "externalPrivateUrl": "https://intcloud-rel-pod2-internalelb.infacloudops.net/saas", 
+                            "external": "https://qa-pod2.rel.infaqa.com/saas"
+                        }, 
+                        "auditlog": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/auditlog-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/auditlog-service"
+                        }, 
+                        "frs": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/frs", 
+                            "external": "https://qa-pod2.rel.infaqa.com/frs"
+                        }, 
+                        "vcs": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/vcs", 
+                            "external": "https://qa-pod2.rel.infaqa.com/vcs"
+                        }, 
+                        "kms": {
+                            "externalPrivateUrl": "https://intcloud-rel-pod2-internalelb.infacloudops.net/kms-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/kms-service"
+                        }, 
+                        "bundle": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/bundle-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/bundle-service"
+                        }, 
+                        "preference": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/preference-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/preference-service"
+                        }, 
+                        "scheduler": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/scheduler-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/scheduler-service"
+                        }, 
+                        "discoveryIQ": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/idiq-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/idiq-service"
+                        }, 
+                        "license": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/license-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/license-service"
+                        }, 
+                        "content_repository": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/content-repo", 
+                            "external": "https://qa-pod2.rel.infaqa.com/content-repo"
+                        }, 
+                        "callback": {
+                            "externalPrivateUrl": "https://qa-pod2.rel.infaqa.com/callback-service", 
+                            "external": "https://qa-pod2.rel.infaqa.com/callback-service"
+                        }, 
+                        "cai": {
+                            "externalPrivateUrl": "https://cai-qa-pod2-r33-release-intelb.infacloudops.net", 
+                            "external": "https://pod2-cai.rel.infaqa.com"
+                        }
+                    }, 
+                    "internalurl": "https://iics-release-pod2-int-elb.infacloudops.net", 
+                    "id": "dJAUzJuQaGYb3hlH3WRle9", 
+                    "name": "pod2"
+                }
+            ]
+        }, 
+        "aws": {
+            "region": "us-west-2"
+        }, 
+        "iamroles": {
+            "secret": "arn:aws:iam::530774763960:role/InfaQACCGFSecretsManagementRole", 
+            "func": "arn:aws:iam::530774763960:role/InfaQACCGFAppRole", 
+            "mgmt": "arn:aws:iam::530774763960:role/InfaQACCGFManagementRole"
+        }, 
+        "cluster": "aws-intcloud-shrd-eks-qa-usw2", 
+        "keepversions": "false", 
+        "gateways": "[{\"name\":\"ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"internal-ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"admin-ui-external-ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"self-service-ui-internal-ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"cdmpuiapp-external-ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"oi-ui-external-ccgf-gateway\"\\,\"isInternal\":\"true\"}\\,{\"name\":\"prep-ui-app-external-ccgf-gateway\"\\,\"isInternal\":\"false\"}]", 
+        "namespaces": {
+            "ccgf-excel-preprocessor": "ccgf-qa-argowf", 
+            "tms": "ccgf-qastaging-hawk-mgmt", 
+            "ccgf-bulkfile-processor": "ccgf-qa-argowf", 
+            "ccgf-merge-processor": "ccgf-qa-argowf", 
+            "ccgf-ingestion-processor": "ccgf-qa-argowf", 
+            "func": "ccgf-qastaging-hawk-func", 
+            "mgmt": "ccgf-qastaging-hawk-mgmt", 
+            "cms": "ccgf-qastaging-hawk-mgmt", 
+            "gateway": "ccgf-qastaging-hawk-func"
+        }, 
+        "urls": {
+            "": "https://qastaging-app.hawk.rel.infaqa.com", 
+            "oiuiexternal": "qastaging-notification-center.hawk.rel.infaqa.com", 
+            "internal": "qastaging-mgmt.hawk.rel.infaqa.com", 
+            "selfserviceuiinternal": "qastaging-selfregistration.hawk.rel.infaqa.com", 
+            "adminuiexternal": "qastaging-admin.hawk.rel.infaqa.com", 
+            "cdmpuiappexternal": "", 
+            "jobmgmtplaneinternal": ""
+        }, 
+        "vault": {
+            "url": "https://ha-vault.eks.iicsqa.uswest2.cloudtrust.rocks", 
+            "basepath": "qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt", 
+            "role": "qa-intcloud-ccgf", 
+            "rdbms": [
+                "/resource/RDBMS/RDBMS/MYSQL/active", 
+                "/serviceResource/RDBMS/cms/main/system/user/active", 
+                "/serviceResource/RDBMS/cms/main/system/admin/active", 
+                "/serviceResource/RDBMS/cms/asset/system/admin/active", 
+                "/serviceResource/RDBMS/cms/asset/system/user/active", 
+                "/serviceResource/RDBMS/tms/common/system/admin/active", 
+                "/serviceResource/RDBMS/tms/common/system/user/active"
+            ], 
+            "dbrelpath": "/rds/mysql"
+        }, 
+        "type": "AWS", 
+        "id": "QASTAGING", 
+        "env": "qa", 
+        "name": "QaStaging"
+    }, 
+    "deployment": {
+        "artifacts": {
+            "service": "hawk-dev", 
+            "service-test-suffix": "-test-ml", 
+            "url": "https://infacloud.jfrog.io/infacloud/", 
+            "register": "hawk-dev-generic", 
+            "landscapeProvision": {
+                "version": "0.2.15", 
+                "name": "ccgf-landscape-provisioning"
+            }, 
+            "credentialsId": "hawk-build-bot", 
+            "helm": "hawk-dev-helm", 
+            "docker": "infacloud-hawk-dev.jfrog.io", 
+            "landscapeConfigMap": {
+                "version": "0.2.10", 
+                "name": "ccgf-landscape-configmap"
+            }
+        }, 
+        "pipeline-version": "0.2.183", 
+        "services": {
+            "ccgf-iics-test": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.0.0.20"
+                }
+            }, 
+            "cloud-deployment-validator": {
+                "version": {
+                    "helm": "0.2.6", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-iics-test-mps": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-relationship": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "2.0.9.98"
+                }
+            }, 
+            "ccgf-discovery": {
+                "version": {
+                    "helm": "0.2.32", 
+                    "service": "1.0.0.20"
+                }
+            }, 
+            "ccgf-job-management-plane": {
+                "version": {
+                    "helm": "0.2.18", 
+                    "service": "1.2.0.8"
+                }
+            }, 
+            "ccgf-ingestion": {
+                "version": {
+                    "helm": "0.2.37", 
+                    "service": "1.2.0.196"
+                }
+            }, 
+            "ccgf-data-source-management": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.4.0.48"
+                }
+            }, 
+            "scheduler": {
+                "version": {
+                    "helm": "0.2.3", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-mgmt-plane-ui-app": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.1.0.125"
+                }
+            }, 
+            "connection-management-service": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "cdmp-marketplace": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-configuration-manager": {
+                "version": {
+                    "helm": "0.2.41", 
+                    "service": "3.6.0.222"
+                }
+            }, 
+            "ccgf-connection-management": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.1.0.34"
+                }
+            }, 
+            "ccgf-content": {
+                "version": {
+                    "helm": "0.2.37", 
+                    "service": "1.2.0.123"
+                }
+            }, 
+            "ccgf-audit-processor": {
+                "version": {
+                    "helm": "0.2.18", 
+                    "service": "1.5.0.29"
+                }
+            }, 
+            "ccgf-discovery-admin": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "1.10.0.45"
+                }
+            }, 
+            "ccgf-search": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "1.3.0.223"
+                }
+            }, 
+            "ccgf-iics-test-dependency": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-graph-database-provision": {
+                "version": {
+                    "helm": "0.2.37", 
+                    "service": "1.0.0.21"
+                }
+            }, 
+            "cloud-deployment-validator-service": {
+                "version": {
+                    "helm": "0.2.8", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-notification-management-plane": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.0.0.8"
+                }
+            }, 
+            "ccgf-tenant-management": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.8.0.111"
+                }
+            }, 
+            "ccgf-audit": {
+                "version": {
+                    "helm": "0.2.35", 
+                    "service": "1.0.0.48"
+                }
+            }, 
+            "oi-notification": {
+                "version": {
+                    "helm": "0.2.6", 
+                    "service": ""
+                }
+            }, 
+            "cai": {
+                "urls": {
+                    "external": "https://pod1-cai.rel.infaqa.com"
+                }
+            }, 
+            "ccgf-ingestion-processor": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.0.0.81"
+                }
+            }, 
+            "ccgf-orchestration-dispatcher": {
+                "version": {
+                    "helm": "0.2.23", 
+                    "service": "1.0.0.31"
+                }
+            }, 
+            "ccgf-excel-preprocessor-job": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-cdlg-app": {
+                "version": {
+                    "helm": "0.2.37", 
+                    "service": "1.1.0.751"
+                }
+            }, 
+            "kms": {
+                "version": {
+                    "helm": "0.2.3", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-issue-management-mps": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-metadata-platform-admin-ui-app": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.0.0.122"
+                }
+            }, 
+            "ccgf-data-source-management-plane": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": "1.0.0.5"
+                }
+            }, 
+            "ccgf-discovery-sync": {
+                "version": {
+                    "helm": "0.2.2", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-logger": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.1.0.174"
+                }
+            }, 
+            "ccgf-discovery-management-plane": {
+                "version": {
+                    "helm": "0.2.15", 
+                    "service": "1.1.0.31"
+                }
+            }, 
+            "ccgf-cloud-deployment-validator": {
+                "version": {
+                    "helm": "0.2.7", 
+                    "service": "1.3.0.55"
+                }
+            }, 
+            "ccgf-excel-preprocessor": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-model": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.3.0.298"
+                }
+            }, 
+            "ccgf-job-management": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "1.4.4.134"
+                }
+            }, 
+            "ccgf-database-provision": {
+                "version": {
+                    "helm": "0.2.37", 
+                    "service": "1.0.0.41"
+                }
+            }, 
+            "ccgf-management-plane": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.0.0.82"
+                }
+            }, 
+            "ccgf-kubernetes-discovery": {
+                "version": {
+                    "helm": "0.2.38", 
+                    "service": "1.0.0.43"
+                }
+            }, 
+            "ccgf-rdbms-provision": {
+                "version": {
+                    "helm": "0.2.32", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-discovery-classification-job": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-authorization": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.0.0.33"
+                }
+            }, 
+            "ccgf-oi-notification-management-plane": {
+                "version": {
+                    "helm": "0.2.23", 
+                    "service": "1.0.0.25"
+                }
+            }, 
+            "ccgf-orchestration-deployer": {
+                "version": {
+                    "helm": "0.2.23", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-messaging-provision": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "2.0.0.36"
+                }
+            }, 
+            "ccgf-marketplace": {
+                "version": {
+                    "helm": "0.2.15", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-orchestration-management-api-server": {
+                "version": {
+                    "helm": "0.2.22", 
+                    "service": "1.4.0.26"
+                }
+            }, 
+            "ccgf-data-source-management-service": {
+                "version": {
+                    "helm": "0.2.15", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-oi-notification-service-ui-app": {
+                "version": {
+                    "helm": "0.2.35", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-issue-management-plane": {
+                "version": {
+                    "helm": "0.2.15", 
+                    "service": "1.0.0.12"
+                }
+            }, 
+            "ccgf-self-registration-tenant-ui-app": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "1.0.0.22"
+                }
+            }, 
+            "ccgf-administrator-ui-app": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": ""
+                }
+            }, 
+            "ccgf-issue-management": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.5.0.59"
+                }
+            }, 
+            "ccgf-notification": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.0.0.3"
+                }
+            }, 
+            "ccgf-bulkfile-processor": {
+                "version": {
+                    "helm": "0.2.34", 
+                    "service": "1.0.0.69"
+                }
+            }, 
+            "ccgf-file-provision": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.0.0.23"
+                }
+            }, 
+            "ccgf-upload": {
+                "version": {
+                    "helm": "0.2.33", 
+                    "service": "1.1.0.41"
+                }
+            }, 
+            "cdmp-ui-app": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.0.0.12"
+                }
+            }, 
+            "ccgf-search-provision": {
+                "version": {
+                    "helm": "0.2.17", 
+                    "service": "1.0.0.77"
+                }
+            }, 
+            "ccgf-oi-notification": {
+                "version": {
+                    "helm": "0.2.36", 
+                    "service": "1.1.0.86"
+                }
+            }, 
+            "ccgf-orchestration-lifecycle-manager": {
+                "version": {
+                    "helm": "0.2.16", 
+                    "service": "1.0.0.19"
+                }
+            }, 
+            "ccgf-orchestration-management-plane": {
+                "version": {
+                    "helm": "0.2.14", 
+                    "service": "1.0.0.4"
+                }
+            }, 
+            "ccgf-notification-processor": {
+                "version": {
+                    "helm": "0.2.18", 
+                    "service": "1.3.0.27"
+                }
+            }, 
+            "ccgf-cache-provision": {
+                "version": {
+                    "helm": "0.2.17", 
+                    "service": "1.0.0.14"
+                }
+            }, 
+            "ccgf-discovery-classification": {
+                "version": {
+                    "helm": "0.2.2", 
+                    "service": ""
+                }
+            }
+        }, 
+        "features": {
+            "applog": {
+                "filebeatVersion": "7.9.0", 
+                "image": "ct-docker.artifacts.cloudtrust.rocks/python/ct-alpine-python3.9", 
+                "cleanup": {
+                    "applogOlderThanMin": "120", 
+                    "backupOlderThanMin": "360", 
+                    "schedule": "*/20 * * * *"
+                }, 
+                "serviceaccountname": "aws-resource-access-service-account", 
+                "resources": {
+                    "filebeatlimits": {
+                        "memory": "500Mi"
+                    }, 
+                    "filebeatrequests": {
+                        "cpu": "100m", 
+                        "memory": "200Mi"
+                    }
+                }
+            }
+        }
+    }, 
+    "validation": {
+        "numberSimultaneousTenants": "1", 
+        "jenkinsServiceVersionUpdate": "cd-ServiceVersionUpdate", 
+        "jenkinsServiceRegistration": "cd-ServiceRegistration", 
+        "jenkinsPlatformServiceRegistration": "PlatformServiceRegistration", 
+        "testFailureEmail": "hawk-build@informatica.com", 
+        "deployFailureEmailCC": "ramaraok@informatica.com", 
+        "disableTest": "Test-Job", 
+        "jenkinsPromote": "cd-Promote-Version-and-Artifacts", 
+        "deployFailureEmail": "Hawk-TinTin@informatica.com", 
+        "jenkins": "ccgf-qa-jenkins", 
+        "testFailureEmailCC": "DL_HawkQE@informatica.com", 
+        "jenkinsTest": "Test-Job"
+    }, 
+    "config": {
+        "repo": "ccgf-qastaging-hawk-config"
+    }, 
+    "resources": {
+        "rds": {
+            "url": "ccgf-qastaging-hawk-mysql.cce748qswozo.us-west-2.rds.amazonaws.com", 
+            "firstdbs": "cms\\,tms", 
+            "prefix": "ccgf", 
+            "version": "8.0", 
+            "master_database": {
+                "category": "RDBMS", 
+                "classtype": "resource", 
+                "status": "active", 
+                "name": "MySQL", 
+                "type": "MySQL"
+            }, 
+            "first_datastores": [
+                {
+                    "category": "RDBMS", 
+                    "function": "main", 
+                    "name": "cms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "user", 
+                    "status": "active", 
+                    "dbname": "cms"
+                }, 
+                {
+                    "category": "RDBMS", 
+                    "function": "main", 
+                    "name": "cms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "admin", 
+                    "status": "active", 
+                    "dbname": "cms"
+                }, 
+                {
+                    "category": "RDBMS", 
+                    "function": "asset", 
+                    "name": "cms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "user", 
+                    "status": "active", 
+                    "dbname": "cms_asset"
+                }, 
+                {
+                    "category": "RDBMS", 
+                    "function": "asset", 
+                    "name": "cms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "admin", 
+                    "status": "active", 
+                    "dbname": "cms_asset"
+                }, 
+                {
+                    "category": "RDBMS", 
+                    "function": "asset", 
+                    "name": "tms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "user", 
+                    "status": "active", 
+                    "dbname": "tms"
+                }, 
+                {
+                    "category": "RDBMS", 
+                    "function": "asset", 
+                    "name": "tms", 
+                    "classtype": "serviceResource", 
+                    "tenantid": "system", 
+                    "usertype": "admin", 
+                    "status": "active", 
+                    "dbname": "tms"
+                }
+            ], 
+            "dbsprefix": "ccgf"
+        }, 
+        "elastic": {
+            "url": "vpc-ccgf-qastaging-hawk-es-6qjdyfhrquylf6aozxnbegu6bm.us-west-2.es.amazonaws.com", 
+            "version": ""
+        }, 
+        "s3": {
+            "url": "s3.us-west-2.amazonaws.com", 
+            "region": "us-west-2", 
+            "version": "", 
+            "bucket": "ccgf-qa-qastaging-hawk"
+        }, 
+        "redis": {
+            "url": "ccgf-qastaging-hawk-redis.lio3to.ng.0001.usw2.cache.amazonaws.com", 
+            "version": ""
+        }, 
+        "efs": {
+            "applog": {
+                "fs": "fs-5a1d645d", 
+                "name": "ccgf-qastaging-hawk-log"
+            }
+        }, 
+        "neptune": {
+            "clusterurl": "ccgf-qastaging-hawk-neptune.cluster-cce748qswozo.us-west-2.neptune.amazonaws.com", 
+            "readerurl": "ccgf-qastaging-hawk-neptune.cluster-ro-cce748qswozo.us-west-2.neptune.amazonaws.com", 
+            "version": ""
+        }, 
+        "kafka": {
+            "url": "ccgf-qastaging-hawk-ms.lqs9s1.c3.kafka.us-west-2.amazonaws.com", 
+            "version": "2.6.0"
+        }
+    }
+}

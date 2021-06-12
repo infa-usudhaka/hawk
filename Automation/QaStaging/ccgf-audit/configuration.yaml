@@ -1,0 +1,9 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-audit-service:1.6.0.103.1
+helmVersion: 0.2.71

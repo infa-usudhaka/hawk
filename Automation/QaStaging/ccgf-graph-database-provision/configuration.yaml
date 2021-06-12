@@ -1,0 +1,9 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-graph-database-provision-service:1.0.1.26.1
+helmVersion: 0.2.72

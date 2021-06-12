@@ -1,0 +1,45 @@
+jobType: "liquibase"
+
+imageSecrets: spinnakerrepoaccess
+imagePullPolicy: Always
+env:
+  - name: IDS_SERVICE_URL_EXT
+    value: https://qa-ma.rel.infaqa.com/identity-service
+  - name: IDS_BASE_URL
+    value: https://qa-ma.rel.infaqa.com
+  - name: LANDSCAPE_DISPLAY_NAME
+    value: "QA Staging"
+  - name: LANDSCAPE_ID
+    value: qa-stg
+  - name: LANDSCAPE_NAME
+    value: QAStaging
+  - name: LANDSCAPE_KAFKA
+    value: QASTG2
+  - name: LANDSCAPE_PROVIDER
+    value: AWS
+  - name: MAPOD_URL
+    value: https://qa-ma.rel.infaqa.com/ma/home
+  - name: MA_SERVICE_URL_EXT
+    value: https://qa-ma.rel.infaqa.com/ma
+  - name: POD_URL
+    value: https://qa-pod1.rel.infaqa.com
+  - name: POD_BASE_URL
+    value: https://qa-pod1.rel.infaqa.com
+  - name: DBSERVER_ALL_VAULT_PATH
+    value: kv/qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt/rds/mysql
+  - name: DBSERVER_CCGF_CMS_VAULT_PATH
+    value: kv/qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt/rds/mysql
+  - name: DBSERVER_CCGF_TMS_VAULT_PATH
+    value: kv/qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt/rds/mysql
+  - name: DBSERVER_CCGF_MODEL_COMMON_VAULT_PATH
+    value: kv/qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt/rds/mysql
+  - name: DBSERVER_CCGF_JOBMANAGEMENT_COMMON_VAULT_PATH
+    value: kv/qa/intcloud/ccgf/common/aws-intcloud-shrd-eks-qa-usw2/ccgf-qastaging-hawk-mgmt/rds/mysql
+  - name: REDISCACHE_VERSION
+    value: "5.0.6"
+  - name: REDISCACHE_HOST
+    value: ccgf-qastaging-hawk-redis.lio3to.ng.0001.usw2.cache.amazonaws.com
+  - name: REDISCACHE_PORT
+    value: "6379"
+
+

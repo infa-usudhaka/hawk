@@ -1,0 +1,8 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-metadata-transfer-service:1.2.0.27.

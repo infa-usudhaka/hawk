@@ -1,0 +1,9 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  elbUrl: http://a28d1a6c6a47f4ff78383b41a3fa62fa-485ba03133dcda5e.elb.us-west-2.amazonaws.com
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-oi-notification-service-ui-app:1.0.2.51.1

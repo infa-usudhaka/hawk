@@ -1,0 +1,37 @@
+[
+  {
+    "service": "ccgf-cache-provision",
+    "version": {
+      "helm": "0.2.18",
+      "service": "1.0.0.15"
+    }
+  },
+  {
+    "service": "ccgf-file-provision",
+    "version": {
+      "helm": "0.2.17",
+      "service": "1.0.0.25"
+    }
+  },
+  {
+    "service": "ccgf-graph-database-provision",
+    "version": {
+      "helm": "0.2.38",
+      "service": "1.0.0.22"
+    }
+  },
+  {
+    "service": "ccgf-messaging-provision",
+    "version": {
+      "helm": "0.2.35",
+      "service": "2.0.0.39"
+    }
+  },
+  {
+    "service": "ccgf-search-provision",
+    "version": {
+      "helm": "0.2.18",
+      "service": "1.0.0.77"
+    }
+  }
+]

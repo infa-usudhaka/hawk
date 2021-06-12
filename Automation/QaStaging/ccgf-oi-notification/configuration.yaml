@@ -1,0 +1,12 @@
+service:
+  probe:
+    readiness: /ccgf-oi-notification/diagnostics/public/probe/readiness
+    liveness: /ccgf-oi-notification/diagnostics/public/probe/liveliness
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-oi-notification-service:2.4.0.137.1
+helmVersion: 0.2.74

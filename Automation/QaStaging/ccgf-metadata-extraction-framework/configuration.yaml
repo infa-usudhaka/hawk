@@ -1,0 +1,7 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-metadata-extraction-framework:1.7.0.79.1
+helmVersion: 0.2.8

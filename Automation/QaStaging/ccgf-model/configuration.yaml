@@ -1,0 +1,9 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-model-service:1.28.0.476.1
+helmVersion: 0.2.72

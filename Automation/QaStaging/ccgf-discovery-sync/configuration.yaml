@@ -1,0 +1,8 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-discovery-sync-job:1.10.0.138.1
+serviceAccount: ccgf-discovery-sync
+helmVersion: 0.2.38

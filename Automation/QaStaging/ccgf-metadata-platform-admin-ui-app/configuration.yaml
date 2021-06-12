@@ -1,0 +1,10 @@
+service:
+  apm:
+    enabled: true
+    loglevel: INFO
+  canary:
+    enabled: false
+  elbUrl: http://a4fe87f4168dd11ea889702f12f0dc80-259308892.us-west-2.elb.amazonaws.com
+  image:
+    repository: infacloud-hawk-dev.jfrog.io/ccgf-metadata-platform-admin-ui-app:1.0.0.412.1
+helmVersion: 0.2.72

@@ -1,0 +1,5 @@
+jobType: "certificate-generator"
+
+imageSecrets: spinnakerrepoaccess
+imagePullPolicy: Always
+serviceAccountName: ccgf-custom-job-pod-sa
