@@ -3,10 +3,9 @@ package utils
 import (
 	"crypto/tls"
 	"fmt"
-
 	"../config"
 	"gopkg.in/gomail.v2"
-	//"gopkg.in/gomail.v2"
+	
 )
 
 func SendMail(body string, subject string, cc string) {

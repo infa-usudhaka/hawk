@@ -1,9 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  canary:
-    enabled: false
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-authorization-service:1.0.0.40.1
-helmVersion: 0.2.69

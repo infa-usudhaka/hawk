@@ -1,7 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-discovery-indexing-job:1.8.0.62.1
-helmVersion: 0.2.11

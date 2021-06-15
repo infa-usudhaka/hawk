@@ -1,9 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  canary:
-    enabled: false
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-data-source-management-plane-service:1.1.0.27.1
-helmVersion: 0.2.50

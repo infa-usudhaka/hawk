@@ -1,9 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  canary:
-    enabled: false
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-merge-service:1.1.0.9.1
-helmVersion: 0.2.3

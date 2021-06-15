@@ -1,7 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-bulkfile-processor-job:1.3.0.117.1
-helmVersion: 0.2.70

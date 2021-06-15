@@ -1,9 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  canary:
-    enabled: false
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-orchestration-lifecycle-manager:1.6.0.96.1
-helmVersion: 0.2.53

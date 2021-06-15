@@ -1,7 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-cache-provision-service:1.0.0.23.1
-

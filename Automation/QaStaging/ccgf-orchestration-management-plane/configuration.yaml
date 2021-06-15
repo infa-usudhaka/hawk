@@ -1,9 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  canary:
-    enabled: false
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-orchestration-management-plane-service:1.1.0.24.1
-helmVersion: 0.2.50

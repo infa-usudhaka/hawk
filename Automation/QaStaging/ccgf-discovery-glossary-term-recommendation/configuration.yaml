@@ -1,7 +1,0 @@
-service:
-  apm:
-    enabled: true
-    loglevel: INFO
-  image:
-    repository: infacloud-hawk-dev.jfrog.io/ccgf-discovery-glossary-term-recommendation-job:1.7.0.63.1
-helmVersion: 0.2.11

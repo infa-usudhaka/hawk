@@ -9,39 +9,36 @@ import (
 	"gopkg.in/yaml.v2"
 	"../utils"
 	"net/http"
-	//"../config"
 	"encoding/json"
-	//"os"
-	//"path/filepath"
+
 )
 
 
-
+//config for yml file
 type cfg struct {
 	
     Service struct{ 
-	Arnrole string `yaml: "arnrole"`
+	Arnrole string `yaml:"arnrole"`
     Image struct{
-    Repository string `yaml: "repository"`
+    Repository string `yaml:"repository"`
     } 
     
-    }`yaml: "service"`
+    }`yaml:"service"`
 	HelmVersion 	 string `yaml:"helmVersion"`
 	Error string
    }
 
 
+   //response body config
    type Body struct {
 	ResponseCode int
 	Message      string
 }
 
 
-/*type config struct{
-	A string `yaml: "a"`
-	//B string `yaml: "b"`
-}*/
 
+
+//func to parse the service configuration.yaml file 
 func (c *cfg) getConfig(path string) *cfg {
 	//var c config
 	
@@ -75,12 +72,13 @@ func indexOf(element string, data []string) (int) {
  }
 
 
+ //func to list all the folders present in the repo
 func listDir( path string) []string{
 
-	fmt.Println(path)
+	//fmt.Println(path)
 dirList := make([]string, 100)
 
-files, err := ioutil.ReadDir("C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config")
+files, err := ioutil.ReadDir(path)
     if err != nil {
         log.Fatal(err)
     }
@@ -91,26 +89,6 @@ files, err := ioutil.ReadDir("C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config")
     }
 
 
-//fmt.Println(dirList)
-
-	
-
-	/***
-	files, err := ioutil.Read(path)
-	if err != nil {
-		fmt.Println("cannot read folder")
-		log.Fatal(err)
-	}
-	for _, f := range files {
-		dirList=append(dirList,f.Name())
-	}
-
-	***/
-
-/*	for _,fn:=range list {
-
-		dirList=append(dirList,fn)
-	}*/
 
 	return dirList
 
@@ -119,10 +97,6 @@ files, err := ioutil.ReadDir("C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config")
 func compareEnv(w http.ResponseWriter, r *http.Request){
 
 
-
-//QaStagingPath:="C:\\Projects\\Go\\hawk\\Automation\\ccgf-qastaging-hawk-config-master\\"
-//PerfPath:="C:\\Projects\\Go\\hawk\\Automation\\Perf\\"
-
 conf := utils.ReadConfig()
 
 repoPath:=conf.RepoPath
@@ -130,6 +104,12 @@ fmt.Println(repoPath)
 
 env1:=strings.TrimSpace(r.URL.Query().Get("env1"))
 env2:=strings.TrimSpace(r.URL.Query().Get("env2"))
+
+fmt.Println(utils.CheckEnv(env1,env2,conf.EnvRepo))
+if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
+	log.Printf("not truee----")
+	utils.RespondWithJSON("Please check the environment name", w, r)
+}
 
 env1Path:=strings.TrimSpace(repoPath+"\\"+env1)
 //env1Path:="C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config\\"
@@ -145,53 +125,51 @@ fmt.Printf("%s,%s",env1,env2)
 fmt.Println(env1Path)
 
 CC := r.URL.Query().Get("Email") 
-//CC:="usudhakar@informatica.com"
-var qaConfig cfg
-var perfConfig cfg
-var colorService string
-//var colorHelm string
 
-//dirListQA:=listDir(QaStagingPath)
+var env1Config cfg
+var env2Config cfg
+var colorService string
+
 dirListPerf:=listDir(env2Path)
 
-fmt.Println(dirListPerf)
+//fmt.Println(dirListPerf)
 
-htmlData:="<html> <table style='backgound:#fff;border-collapse: collapse;' border = '1' cellpadding = '6'> <tr style='background:#000;color:#fff'><th>Service Name</th> <th>"+env1+" Service Version</th>  <th>"+env2+" Service Version </th> <th> "+env1+" Helm Version</th>  <th>"+env2+" Helm Version </th></tr>  "
+htmlData:="<html>  <table style='backgound:#fff;border-collapse: collapse;' border = '1' cellpadding = '6'> <tr style='background:#000;color:#fff'><th>Service Name</th> <th>"+env1+" Service Version</th>  <th>"+env2+" Service Version </th> <th> "+env1+" Helm Version</th>  <th>"+env2+" Helm Version </th></tr>  "
 
 //fmt.Println(dirListPerf)
 for _,i := range dirListPerf{
 
 	if i!="" && i!="README.md" && i!=".git" {
 	
-	qaConfig.getConfig(env1Path+"\\"+i+"\\configuration.yaml")
-	perfConfig.getConfig(env2Path+"\\"+i+"\\configuration.yaml")
+	env1Config.getConfig(env1Path+"\\"+i+"\\configuration.yaml")
+	env2Config.getConfig(env2Path+"\\"+i+"\\configuration.yaml")
 	
 	//skip the service if repo empty
-	if qaConfig.Service.Image.Repository=="" || perfConfig.Service.Image.Repository=="" {
+	if env1Config.Service.Image.Repository=="" || env2Config.Service.Image.Repository=="" {
 		continue
 	}
 
-	repoQA:=strings.Split(qaConfig.Service.Image.Repository,":")
-	repoPerf:=strings.Split(perfConfig.Service.Image.Repository,":")
+	repoenv1:=strings.Split(env1Config.Service.Image.Repository,":")
+	repoenv2:=strings.Split(env2Config.Service.Image.Repository,":")
 	
-	fmt.Println(i,repoPerf)
-	if repoQA[1]!=repoPerf[1]{
+//	fmt.Println(i,repoenv2)
+	if repoenv1[1]!=repoenv2[1]{
 		colorService="#ff8080"
 	}else{
-		colorService="green"
+		colorService="#66cc00"
 	}
-	//fmt.Println(repoQA,repoPerf)
-	helmVersionQA:=""
-	helmVersionPerf:=""
+	
+	helmVersionenv1:=""
+	helmVersionenv2:=""
 	
 
-	if qaConfig.HelmVersion !="" {
-		helmVersionQA=qaConfig.HelmVersion
-		helmVersionPerf=perfConfig.HelmVersion
-		//fmt.Println(helmVersionQA,helmVersionPerf)
+	if env1Config.HelmVersion !="" {
+		helmVersionenv1=env1Config.HelmVersion
+		helmVersionenv2=env2Config.HelmVersion
+		//fmt.Println(helmVersionenv1,helmVersionenv2)
 	}
 
-	htmlData=htmlData+"<tr> <td style='background:"+colorService+"'> <b>"+i+"</b></td><td>"+repoQA[1]+"</td><td>"+repoPerf[1]+"</td><td>"+helmVersionQA+"</td><td>"+helmVersionPerf+"</td></tr>"
+	htmlData=htmlData+"<tr> <td style='background:"+colorService+"'> <b>"+i+"</b></td><td>"+repoenv1[1]+"</td><td>"+repoenv2[1]+"</td><td>"+helmVersionenv1+"</td><td>"+helmVersionenv2+"</td></tr>"
 
 
 }
