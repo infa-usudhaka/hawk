@@ -13,6 +13,22 @@ import (
 
 )
 
+//config for release.json
+
+
+type version struct {
+	Helm    string `json:"helm"`
+	Service string `json:"service"`
+} 
+
+type releaseJson struct {
+	Deploy  string `json:"deploy"`
+	Service string `json:"service"`
+	Version version `json:"version"`
+}
+
+
+
 
 //config for yml file
 type cfg struct {
@@ -130,6 +146,8 @@ var env1Config cfg
 var env2Config cfg
 var colorService string
 
+jsondata := []releaseJson{}
+
 dirListPerf:=listDir(env2Path)
 
 //fmt.Println(dirListPerf)
@@ -171,11 +189,29 @@ for _,i := range dirListPerf{
 
 	htmlData=htmlData+"<tr> <td style='background:"+colorService+"'> <b>"+i+"</b></td><td>"+repoenv1[1]+"</td><td>"+repoenv2[1]+"</td><td>"+helmVersionenv1+"</td><td>"+helmVersionenv2+"</td></tr>"
 
+	if colorService=="#ff8080"{
+	newJsonDoc := &releaseJson{
+        Deploy: i,
+		Service:i,
+		Version:version{
+			Helm:helmVersionenv1,
+			Service:repoenv1[1],
+		},
+    }
+
+    jsondata = append(jsondata, *newJsonDoc)
+}
 
 }
 
 }
 //fmt.Println(htmlData)
+outputJSON, _ := json.Marshal(jsondata)
+//fmt.Println(outputJSON)
+err := ioutil.WriteFile("release.json", outputJSON, 0644)
+    if err != nil {
+        log.Println(err)
+    }
 subject:="Service Version Comparison "+env1+" vs "+env2
 
 utils.SendMail(htmlData, subject, CC)
