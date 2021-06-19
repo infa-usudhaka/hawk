@@ -127,9 +127,9 @@ if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
 	utils.RespondWithJSON("Please check the environment name", w, r)
 }
 
-env1Path:=strings.TrimSpace(repoPath+"\\"+env1)
+env1Path:=strings.TrimSpace(repoPath+"/"+env1)
 //env1Path:="C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config\\"
-env2Path:=strings.TrimSpace(repoPath+"\\"+env2)
+env2Path:=strings.TrimSpace(repoPath+"/"+env2)
 //env2Path:="C:\\HAWK\\Repo\\ccgf-perf-hawk-config\\"
 
 
@@ -159,8 +159,8 @@ for _,i := range dirListPerf{
 
 	if i!="" && i!="README.md" && i!=".git" {
 	
-	env1Config.getConfig(env1Path+"\\"+i+"\\configuration.yaml")
-	env2Config.getConfig(env2Path+"\\"+i+"\\configuration.yaml")
+	env1Config.getConfig(env1Path+"/"+i+"/configuration.yaml")
+	env2Config.getConfig(env2Path+"/"+i+"/configuration.yaml")
 	
 	//skip the service if repo empty
 	if env1Config.Service.Image.Repository=="" || env2Config.Service.Image.Repository=="" {
