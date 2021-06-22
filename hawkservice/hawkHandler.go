@@ -10,8 +10,8 @@ import (
 	"../utils"
 	"net/http"
 	"encoding/json"
-	"os/exec"
-	"os"
+	//"os/exec"
+	//"os"
 
 )
 
@@ -130,9 +130,9 @@ if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
 }
 
 
-cmd := &exec.Cmd {
+/*cmd := &exec.Cmd {
 	Path: "./repo.sh",
-	Args: []string{ "./repo.sh" },
+	Args: []string{ "./repo.sh" ,""},
 	Stdout: os.Stdout,
 	Stderr: os.Stdout,
 }
@@ -143,6 +143,7 @@ err := cmd.Run()
 if err != nil {
         log.Fatal(err)
     }
+	*/
 
 env1Path:=strings.TrimSpace(repoPath+"/"+env1)
 //env1Path:="C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config\\"
@@ -176,8 +177,8 @@ for _,i := range dirListPerf{
 
 	if i!="" && i!="README.md" && i!=".git" {
 	
-	env1Config.getConfig(env1Path+"/"+i+"/configuration.yaml")
-	env2Config.getConfig(env2Path+"/"+i+"/configuration.yaml")
+	env1Config.getConfig(env1Path+"\\"+i+"\\configuration.yaml")
+	env2Config.getConfig(env2Path+"\\"+i+"\\configuration.yaml")
 	
 	//skip the service if repo empty
 	if env1Config.Service.Image.Repository=="" || env2Config.Service.Image.Repository=="" {
@@ -225,7 +226,7 @@ for _,i := range dirListPerf{
 //fmt.Println(htmlData)
 outputJSON, _ := json.Marshal(jsondata)
 //fmt.Println(outputJSON)
-err = ioutil.WriteFile("release.json", outputJSON, 0644)
+err := ioutil.WriteFile("release.json", outputJSON, 0644)
     if err != nil {
         log.Println(err)
     }
