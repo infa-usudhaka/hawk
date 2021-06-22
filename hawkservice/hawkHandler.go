@@ -10,6 +10,7 @@ import (
 	"../utils"
 	"net/http"
 	"encoding/json"
+	"os/exec"
 
 )
 
@@ -127,6 +128,14 @@ if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
 	utils.RespondWithJSON("Please check the environment name", w, r)
 }
 
+cmd := exec.Command("sh repo.sh")
+
+err := cmd.Run()
+
+if err != nil {
+        log.Fatal(err)
+    }
+
 env1Path:=strings.TrimSpace(repoPath+"/"+env1)
 //env1Path:="C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config\\"
 env2Path:=strings.TrimSpace(repoPath+"/"+env2)
@@ -208,7 +217,7 @@ for _,i := range dirListPerf{
 //fmt.Println(htmlData)
 outputJSON, _ := json.Marshal(jsondata)
 //fmt.Println(outputJSON)
-err := ioutil.WriteFile("release.json", outputJSON, 0644)
+err = ioutil.WriteFile("release.json", outputJSON, 0644)
     if err != nil {
         log.Println(err)
     }
