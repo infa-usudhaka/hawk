@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"encoding/json"
 	"os/exec"
+	"os"
 
 )
 
@@ -128,7 +129,14 @@ if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
 	utils.RespondWithJSON("Please check the environment name", w, r)
 }
 
-cmd := exec.Command("sh repo.sh")
+
+cmd := &exec.Cmd {
+	Path: "./repo.sh",
+	Args: []string{ "./repo.sh" },
+	Stdout: os.Stdout,
+	Stderr: os.Stdout,
+}
+
 
 err := cmd.Run()
 
