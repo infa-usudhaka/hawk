@@ -112,7 +112,7 @@ files, err := ioutil.ReadDir(path)
 
 }
 
-func compareEnv(w http.ResponseWriter, r *http.Request){
+func compareEnv(w http.ResponseWriter, r *http.Request) {
 
 
 conf := utils.ReadConfig()
@@ -122,11 +122,15 @@ fmt.Println(repoPath)
 
 env1:=strings.TrimSpace(r.URL.Query().Get("env1"))
 env2:=strings.TrimSpace(r.URL.Query().Get("env2"))
+flag:=true
 
 fmt.Println(utils.CheckEnv(env1,env2,conf.EnvRepo))
+
 if utils.CheckEnv(env1,env2,conf.EnvRepo)!=true{
 	log.Printf("not truee----")
 	utils.RespondWithJSON("Please check the environment name", w, r)
+	flag=false
+
 }
 
 
@@ -145,6 +149,7 @@ if err != nil {
     }
 	*/
 
+	if flag{
 env1Path:=strings.TrimSpace(repoPath+"/"+env1)
 //env1Path:="C:\\HAWK\\Repo\\ccgf-qastaging-hawk-config\\"
 env2Path:=strings.TrimSpace(repoPath+"/"+env2)
@@ -237,6 +242,7 @@ utils.SendMail(htmlData, subject, CC)
 utils.RespondWithJSON("Email Sent Successfully", w, r)
 
 
+	}
 
 }
 
