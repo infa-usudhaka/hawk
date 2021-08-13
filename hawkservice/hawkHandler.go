@@ -169,7 +169,7 @@ var colorService string
 
 jsondata := []releaseJson{}
 
-dirListPerf:=listDir(env2Path)
+dirListPerf:=listDir(env1Path)
 
 //fmt.Println(dirListPerf)
 
