@@ -184,29 +184,38 @@ for _,i := range dirListPerf{
 	env2Config.getConfig(env2Path+"/"+i+"/configuration.yaml")
 	
 	//skip the service if repo empty
-	if env1Config.Service.Image.Repository=="" || env2Config.Service.Image.Repository=="" {
-		continue
-	}
-
-	repoenv1:=strings.Split(env1Config.Service.Image.Repository,":")
-	repoenv2:=strings.Split(env2Config.Service.Image.Repository,":")
+	//if env1Config.Service.Image.Repository=="" || env2Config.Service.Image.Repository=="" {
+		if env1Config.Service.Image.Repository==""  {
+			continue
+		}
 	
-//	fmt.Println(i,repoenv2)
-	if repoenv1[1]!=repoenv2[1]{
-		colorService="#ff8080"
-	}else{
-		colorService="#66cc00"
-	}
+		if env2Config.Service.Image.Repository==""  {
+			env2Config.Service.Image.Repository=":"
+		}
 	
-	helmVersionenv1:=""
-	helmVersionenv2:=""
 	
-
-	if env1Config.HelmVersion !="" {
-		helmVersionenv1=env1Config.HelmVersion
-		helmVersionenv2=env2Config.HelmVersion
-		//fmt.Println(helmVersionenv1,helmVersionenv2)
-	}
+		repoenv1:=strings.Split(env1Config.Service.Image.Repository,":")
+		repoenv2:=strings.Split(env2Config.Service.Image.Repository,":")
+		
+	//	fmt.Println(i,repoenv2)
+		if repoenv1[1]!=repoenv2[1]{
+			colorService="#ff8080"
+		}else{
+			colorService="#66cc00"
+		}
+		
+		helmVersionenv1:=""
+		helmVersionenv2:=""
+		
+	
+		if env1Config.HelmVersion !=""  {
+			helmVersionenv1=env1Config.HelmVersion
+			helmVersionenv2=env2Config.HelmVersion
+	
+			if env2Config.HelmVersion ==""  {
+			helmVersionenv2=""}
+			//fmt.Println(helmVersionenv1,helmVersionenv2)
+		}
 
 	htmlData=htmlData+"<tr> <td style='background:"+colorService+"'> <b>"+i+"</b></td><td>"+repoenv1[1]+"</td><td>"+repoenv2[1]+"</td><td>"+helmVersionenv1+"</td><td>"+helmVersionenv2+"</td></tr>"
 
